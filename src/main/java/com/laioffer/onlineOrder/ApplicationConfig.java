@@ -29,7 +29,7 @@ public class ApplicationConfig {
         String PASSWORD = "";
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://RDS_INSTANCE:3306/onlineOrder?createDatabaseIfNotExist=true&serverTimezone=UTC");
+        dataSource.setUrl("jdbc:mysql://" + RDS_INSTANCE + ":3306/onlineOrder?createDatabaseIfNotExist=true&serverTimezone=UTC");
         dataSource.setUsername(USERNAME);
         dataSource.setPassword(PASSWORD);
 

@@ -24,15 +24,18 @@ public class ApplicationConfig {
 
     @Bean(name = "dataSource")
     public DataSource dataSource() {
+        String RDS_INSTANCE = "";
+        String USERNAME = "";
+        String PASSWORD = "";
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        // 只需要修改红色部分, 保留其他内容,  YOUR_RDS_INSTANCE_ADDRESS,USERNAME,  PASSWORD可以回到第一个项目的MysqlDBUtil.java去找
-        dataSource.setUrl("jdbc:mysql://laiproject.ctfzbnbgtph7.us-east-2.rds.amazonaws.com:3306/onlineOrder?createDatabaseIfNotExist=true&serverTimezone=UTC");
-        dataSource.setUsername("admin");
-        dataSource.setPassword("12345678");
+        dataSource.setUrl("jdbc:mysql://RDS_INSTANCE:3306/onlineOrder?createDatabaseIfNotExist=true&serverTimezone=UTC");
+        dataSource.setUsername(USERNAME);
+        dataSource.setPassword(PASSWORD);
 
         return dataSource;
     }
+
 
 
     private Properties hibernateProperties() {
